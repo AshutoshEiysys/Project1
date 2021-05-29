@@ -47,6 +47,10 @@ var createAccount = function (req, res) {
     });
   } catch (e) {
     console.log(e);
+    return res.json({
+      status: 404,
+      msg: "Oops!! Something went wrong.",
+    });
   }
 };
 
@@ -161,6 +165,10 @@ var createETHAccount = async function (req, res) {
     }
   } catch (e) {
     res.send(e);
+    return res.json({
+      status: 404,
+      msg: "Oops!! Something went wrong.",
+    });
   }
 };
 
